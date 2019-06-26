@@ -34,6 +34,11 @@ class HomeController @Inject()(ws: WSClient, cc: ControllerComponents) extends A
     Ok(views.html.index())
   }
 
+  def hello(name:String) = Action {implicit request: Request[AnyContent] =>
+    //Ok("Hello, " + name + "!" )
+    Ok(views.html.hello.render( name ))
+  }
+
   def plainText() = Action {
     Ok("This is just a text message.")
   }

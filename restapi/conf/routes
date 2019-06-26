@@ -5,6 +5,7 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
+GET     /hello/:name                           controllers.HomeController.hello(name:String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
@@ -16,3 +17,8 @@ GET /json/map   controllers.HomeController.jsonMap
 GET /json/object   controllers.HomeController.jsonObject
 
 GET /json/catch   controllers.HomeController.jsonCatch
+
+
+
+# Inspiration CRUD endpoints
+GET     /inspiration                controllers.InspirationController.index
